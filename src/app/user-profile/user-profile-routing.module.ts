@@ -7,6 +7,18 @@ const routes: Routes = [
   {
     path: '',
     component: UserProfilePage
+  },
+  {
+    path: 'repositories',
+    loadChildren: () => import('./repositories/repositories.module').then( m => m.RepositoriesPageModule)
+  },
+  {
+    path: 'events',
+    loadChildren: () => import('./events/events.module').then( m => m.EventsPageModule)
+  },
+  {
+    path: 'feed',
+    loadChildren: () => import('./feed/feed.module').then( m => m.FeedPageModule)
   }
 ];
 

@@ -5,7 +5,7 @@ import { UserProfileService } from  './user-profile.service'
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.page.html',
-  styleUrls: ['./user-profile.page.scss'],
+  styleUrls: ['./user-profile.page.scss','../app.component.scss'],
 })
 export class UserProfilePage implements OnInit {
   username="";

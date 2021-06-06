@@ -82,3 +82,57 @@ ion-toolbar{
     margin-top: 0px;
   }
 }
+.bg-grad{
+  background: linear-gradient(45deg, var(--ion-color-primary) 0%, var(--ion-color-secondary) 110%);
+  margin: -10px;
+}
+// profile page Design
+.profile-con{
+  padding: 10px;
+  color: var(--ion-color-light);
+}
+.profile-con .dp{
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 10px;
+}
+.profile-con .profile-sum{
+  display: flex;
+}
+.profile-con .profile-sum span{
+  margin-right: 20px;
+  text-align: center;
+}
+.profile-con .profile-sum span h2{
+  font-family: 'longhaul';
+  margin: 0px;
+  font-size: 28px;
+}
+.profile-con .profile-sum span p{
+  margin: 0px;
+}
+.profile-con .profile h1{
+  margin-top: 0px;
+}
+.profile-con .profile p{
+  margin: 0px;
+}
+blockquote {
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+blockquote:before {
+  content: open-quote;
+}
+blockquote:after {
+  content: close-quote;
+}
+blockquote:before,
+blockquote:after {
+  display: inline-block;
+  vertical-align: bottom;
+  color: var(--ion-color-secondary);
+  font-size: 4em;
+  top: .2em;
+  position: relative;
+}
