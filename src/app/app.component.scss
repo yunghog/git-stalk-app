@@ -1,0 +1,84 @@
+@font-face {
+  font-family: 'longhaul';
+  src: url('../assets/fonts/longhaul.ttf');
+}
+@font-face {
+  font-family: 'poppins';
+  src: url('../assets/fonts/poppins.ttf');
+}
+ion-content{
+  font-family: 'poppins';
+}
+ion-button{
+  text-transform: uppercase;
+  font-family: 'longhaul';
+  letter-spacing: 2px;
+}
+ion-toolbar{
+  font-family: 'poppins';
+  --background: linear-gradient(90deg, var(--ion-color-primary) 0%, var(--ion-color-secondary) 110%);
+  color: var(--ion-text-color);
+}
+.heading h1{
+  font-family: 'longhaul';
+  margin-bottom: 0px;
+  text-transform: uppercase;
+}
+.heading p{
+  margin-top: 0px;
+  color: var(--ion-color-secondary);
+}
+.img-con{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  background: linear-gradient(45deg, var(--ion-color-primary) 0%, var(--ion-color-secondary) 110%);
+  margin: -10px;
+}
+.img-con img{
+  width: 90%;
+}
+.waves{
+  margin: -10px;
+  position: relative;
+}
+.wave-behind{
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 2;
+  left: 0px;
+}
+.form-ctrl ion-input{
+  padding-left: 30px !important;
+  border-radius: 10px;
+  border: 2px solid var(--ion-color-primary);
+  margin: 10px 0px 10px 0px;
+}
+.form-ctrl .label{
+  position: absolute;
+  font-size: 14px;
+  background-color: var(--ion-color-primary);
+  padding: 0px 10px;
+  color: var(--ion-color-light);
+  top: 0px;
+  left: 20px;
+  z-index: 10;
+}
+.form-ctrl .icon{
+  position: absolute;
+  left: 10px;
+}
+.anim-shift-up{
+  margin: inherit;
+  animation: shift-up 2s ease;
+}
+@keyframes shift-up{
+  from{
+    margin-top: 30px;
+  }
+  to{
+    margin-top: 0px;
+  }
+}
