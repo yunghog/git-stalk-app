@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid>
+  <ion-row>
+    <ion-col size-md="4" offset-md="4">
+      <div class="img-con">
+
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size-md="4" offset-md="4">
+      <div class="panel-con">
+        <div class="heading">
+          <h1>Configure</h1>
+          <p>Enter your Github Username</p>
+        </div>
+        <div class="form-ctrl">
+          <ion-item>
+            <ion-input [(ngModel)]="inUsername" placeholder="Username"></ion-input>
+          </ion-item>
+          <ion-button expand="block" (click)="onConfigure()">Configure</ion-button>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
