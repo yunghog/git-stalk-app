@@ -6,19 +6,31 @@ import { UserProfilePage } from './user-profile.page';
 const routes: Routes = [
   {
     path: '',
-    component: UserProfilePage
+    redirectTo: 'tabs',
+    pathMatch: 'full'
   },
   {
-    path: 'repositories',
-    loadChildren: () => import('./repositories/repositories.module').then( m => m.RepositoriesPageModule)
-  },
-  {
-    path: 'events',
-    loadChildren: () => import('./events/events.module').then( m => m.EventsPageModule)
-  },
-  {
-    path: 'feed',
-    loadChildren: () => import('./feed/feed.module').then( m => m.FeedPageModule)
+    path:'tabs',
+    component: UserProfilePage,
+    children: [
+      {
+        path: '',
+        redirectTo: 'repositories',
+        pathMatch: 'full'
+      },
+      {
+        path: 'repositories',
+        loadChildren: () => import('./repositories/repositories.module').then( m => m.RepositoriesPageModule)
+      },
+      {
+        path: 'events',
+        loadChildren: () => import('./events/events.module').then( m => m.EventsPageModule)
+      },
+      {
+        path: 'feed',
+        loadChildren: () => import('./feed/feed.module').then( m => m.FeedPageModule)
+      }
+    ]
   }
 ];
 

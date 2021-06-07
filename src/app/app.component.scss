@@ -19,6 +19,9 @@ ion-toolbar{
   --background: linear-gradient(90deg, var(--ion-color-primary) 0%, var(--ion-color-secondary) 110%);
   color: var(--ion-text-color);
 }
+.heading{
+  padding: 10px;
+}
 .heading h1{
   font-family: 'longhaul';
   margin-bottom: 0px;
@@ -135,4 +138,15 @@ blockquote:after {
   font-size: 4em;
   top: .2em;
   position: relative;
+}
+.repo-card{
+  list-style-type: none;
+  padding: 10px;
+  background-color: rgba(var(--ion-color-light-rgb),.3);
+  border: 1px solid rgba(var(--ion-color-medium-rgb),.3);
+  border-radius: 10px;
+  margin: 10px;
+}
+.repo-card h2{
+  margin: 0px;
 }

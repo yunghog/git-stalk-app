@@ -1,0 +1,6 @@
+{
+	"appId": "com.gitwatch.app",
+	"appName": "Gitwatch",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

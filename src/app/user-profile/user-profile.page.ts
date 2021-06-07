@@ -17,19 +17,8 @@ export class UserProfilePage implements OnInit {
   ngOnInit() {
     this.ar.paramMap.subscribe(paramMap=>{
     const username=paramMap.get('username');
-    if(username===null){
-      this.store.get('curUser').then(val=>{
-        this.username=val;
-        this.us.getUser(this.username).subscribe(res=>{
-          this.userProfile=res;
-        })
-      })
-    }
-    else{
-      this.username=username;
-      this.us.getUser(this.username).subscribe(res=>{
-        this.userProfile=res;
-      })
+    if(username!==null){
+      this.us.setUsername(username);
     }
     })
   }

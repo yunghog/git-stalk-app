@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'user-profile/:username',
     loadChildren: () => import('./user-profile/user-profile.module').then( m => m.UserProfilePageModule)
+  },
+  {
+    path: 'watch',
+    loadChildren: () => import('./watch/watch.module').then( m => m.WatchPageModule)
   }
 ];
 
