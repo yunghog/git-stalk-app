@@ -150,3 +150,13 @@ blockquote:after {
 .repo-card h2{
   margin: 0px;
 }
+.feed-item p{
+  display: inline;
+}
+.feed-item .actor,p.feed-desc{
+  font-weight: bolder;
+}
+.feed-item p.feed-desc{
+  display: block;
+  color: rgba(var(--ion-color-primary-rgb),.5);
+}

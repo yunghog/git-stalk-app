@@ -56,11 +56,36 @@
   <ion-row>
     <ion-col size-md="4" offset-md="4">
       <div class="heading">
-        <h1>Repositories</h1>
+        <h1>Received Events</h1>
       </div>
-      <li class="repo-card" *ngFor="let feed of feeds">
-            <h2>{{feed.actor.login}} {{feed.type}}</h2>
-      </li>
+      <ion-item class="feed-item" *ngFor="let feed of feeds">
+        <ion-avatar slot="start">
+          <img src="{{feed.actor.avatar_url}}">
+        </ion-avatar>
+        <ion-label>
+          <span class="actor">{{feed.actor.login}}</span>
+          <span [ngSwitch]="feed.type">
+          <p *ngSwitchCase="'CreateEvent'">
+            created a repository
+          </p>
+          <p *ngSwitchCase="WatchEvent">
+            starred a repository
+          </p>
+          <p *ngSwitchCase="ForkEvent">
+            forked a repository from {{feed.payload.forkee}}
+          </p>
+          <p *ngSwitchCase="DeleteEvent">
+            deleted the branch {{payload.ref_type}}
+          </p>
+          <p *ngSwitchDefault>
+            did a {{feed.type.replace('Event','')}} on
+          </p>
+          </span>
+          <p class="feed-desc">
+            {{feed.repo.name}}
+          </p>
+        </ion-label>
+      </ion-item>
     </ion-col>
   </ion-row>
 </ion-content>
