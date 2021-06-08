@@ -17,15 +17,15 @@
             <div class="profile">
               <h1>{{userProfile.name}}</h1>
               <div class="profile-sum">
-                <span>
+                <span routerLink="/user-profile/{{userProfile.login}}">
                   <h2>{{userProfile.public_repos}}</h2>
                   <p>Repos</p>
                 </span>
-                <span>
+                <span  routerLink="/user-profile/{{userProfile.login}}/followers">
                   <h2>{{userProfile.followers}}</h2>
                   <p>Followers</p>
                 </span>
-                <span>
+                <span  routerLink="/user-profile/{{userProfile.login}}/following"> 
                   <h2>{{userProfile.following}}</h2>
                   <p>Following</p>
                 </span>

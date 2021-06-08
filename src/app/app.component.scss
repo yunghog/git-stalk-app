@@ -160,3 +160,20 @@ blockquote:after {
   display: block;
   color: rgba(var(--ion-color-primary-rgb),.5);
 }
+
+// HomePage
+.home-stories{
+  margin-top: 10px;
+  padding: 10px 0px;
+  border: 1px solid rgba(var(--ion-color-medium-rgb),.2);
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(var(--ion-color-primary-rgb),.2);
+}
+.activity-header{
+  padding-bottom: 30px;
+}
+.actor2{
+  font-family: 'poppins';
+  font-weight: bolder;
+  color: rgba(var(--ion-color-primary-rgb),.7)
+}

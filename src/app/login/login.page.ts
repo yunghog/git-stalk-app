@@ -14,13 +14,13 @@ export class LoginPage implements OnInit {
   ngOnInit() {
     this.store.get('curUser').then(val=>{
       if(val!=null){
-        this.router.navigateByUrl('/user-profile');
+        this.router.navigateByUrl('/home');
       }
     })
   }
   onConfigure(){
     let username=this.inUsername;
     this.store.set('curUser',username);
-    this.router.navigateByUrl('/user-profile');
+    this.router.navigateByUrl('/home');
   }
 }

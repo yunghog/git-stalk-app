@@ -8,14 +8,16 @@ export class HomeService {
 
   constructor(private http: HttpClient) { }
 
-  getRes(){
-    return this.http.get("https://api.github.com/users/yunghog")
-  }
   getUser(username: String){
     let url = "https://api.github.com/users/"+username;
     return this.http.get(url);
   }
-  getRepos(){
-    return this.http.get<Repos[]>("https://api.github.com/users/yunghog/repos")
+  getFeed(username: String){
+    let url = "https://api.github.com/users/"+username+"/received_events".replace(' ','');
+    return this.http.get<any[]>(url);
+  }
+  getFollowing(username: String){
+    let url = "https://api.github.com/users/"+username+"/following".replace(' ','');
+    return this.http.get<any[]>(url);
   }
 }
