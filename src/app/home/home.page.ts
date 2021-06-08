@@ -12,7 +12,7 @@ export class HomePage implements OnInit{
   feeds=[];
   d = Date();
   d1= new Date();
-  today_ref= this.d1.getMonth()+'-'+this.d1.getDate();
+  today_ref= this.getTodayRef();
   today=this.d.split(' ').slice(0,4).join(" ");
   slideOpts = {
       slidesPerView: this.checkScreen()
@@ -38,5 +38,14 @@ export class HomePage implements OnInit{
           this.following=res;
         });
     })
+  }
+  getTodayRef(){
+    let m = this.d1.getMonth()+1;
+    let d = this.d1.getDate();
+    let mon = "";
+    let date = "";
+    m<10?mon='0'+m:mon=m+'';
+    d<10?date='0'+d:date=d+'';
+    return(mon+'-'+date);
   }
 }

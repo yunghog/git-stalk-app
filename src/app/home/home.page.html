@@ -39,7 +39,7 @@
             </ion-avatar>
             <ion-label>
               <span class="actor2">{{feed.actor.login}}</span>
-              <ion-badge *ngIf="today_ref==feed.created_at.slice(5,10).replaceAll('0','')" style="margin-left:20px" size="small" color="primary">new</ion-badge>
+              <ion-badge *ngIf="today_ref==feed.created_at.slice(5,10)" style="margin-left:20px" size="small" color="primary">new</ion-badge>
               <br/>
               <span [ngSwitch]="feed.type">
               <p *ngSwitchCase="'CreateEvent'">
