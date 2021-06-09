@@ -27,8 +27,8 @@
     <ion-col size-md="4" offset-md="4">
       <div class="panel-con anim-shift-up">
         <div class="heading">
-          <h1>Configure</h1>
-          <p>Enter your Github Username</p>
+          <h1>Login</h1>
+          <p>Login with your Github username</p>
         </div>
         <div>
           <ion-item class="form-ctrl ion-no-padding" lines="none">
@@ -40,8 +40,19 @@
             </span>
             <ion-input [(ngModel)]="inUsername" placeholder="Github Username"></ion-input>
           </ion-item>
-          <ion-button expand="block" (click)="onConfigure()">Configure</ion-button>
+          <ion-item class="form-ctrl ion-no-padding" lines="none">
+            <span class="label">
+              Password
+            </span>
+            <span class="icon">
+              <ion-icon name="lock-closed-outline" color="primary"></ion-icon>
+            </span>
+            <ion-input [(ngModel)]="inPassword" placeholder="Password"></ion-input>
+          </ion-item>
+          <ion-button expand="block" (click)="onLogin()">Login</ion-button>
         </div>
+        <ion-chip color="danger" *ngIf="!userExist">User does not exist. Signup to create a new account.</ion-chip>
+        <p class="ion-text-center">Dont have an account? <a routerLink="/signup">Sign up</a></p>
       </div>
     </ion-col>
   </ion-row>
