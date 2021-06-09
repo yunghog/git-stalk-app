@@ -1,9 +1,25 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>following</ion-title>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title>{{username}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content [fullscreen]="true">
+  <app-header></app-header>
+  <ion-row>
+    <ion-col size-md="4" offset-md="4">
+      <div class="heading">
+        <h1>Following</h1>
+      </div>
+      <ion-item class="feed-item" *ngFor="let follower of following" detail routerLink="/user-profile/{{follower.login}}">
+        <ion-avatar slot="start">
+          <img src="{{follower.avatar_url}}">
+        </ion-avatar>
+        <ion-label>
+          <span class="actor">{{follower.login}}</span>
+        </ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
 </ion-content>

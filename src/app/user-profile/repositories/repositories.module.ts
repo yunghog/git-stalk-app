@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { RepositoriesPageRoutingModule } from './repositories-routing.module';
 
 import { RepositoriesPage } from './repositories.page';
-
+import { HeaderComponent } from '../header/header.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +15,6 @@ import { RepositoriesPage } from './repositories.page';
     IonicModule,
     RepositoriesPageRoutingModule
   ],
-  declarations: [RepositoriesPage]
+  declarations: [RepositoriesPage,HeaderComponent]
 })
 export class RepositoriesPageModule {}

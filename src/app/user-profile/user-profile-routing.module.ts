@@ -29,16 +29,16 @@ const routes: Routes = [
       {
         path: 'feed',
         loadChildren: () => import('./feed/feed.module').then( m => m.FeedPageModule)
+      },
+      {
+        path: 'followers',
+        loadChildren: () => import('./followers/followers.module').then( m => m.FollowersPageModule)
+      },
+      {
+        path: 'following',
+        loadChildren: () => import('./following/following.module').then( m => m.FollowingPageModule)
       }
     ]
-  },
-  {
-    path: 'followers',
-    loadChildren: () => import('./followers/followers.module').then( m => m.FollowersPageModule)
-  },
-  {
-    path: 'following',
-    loadChildren: () => import('./following/following.module').then( m => m.FollowingPageModule)
   }
 ];
 

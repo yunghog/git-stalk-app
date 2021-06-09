@@ -18,25 +18,10 @@ export class FollowersPage implements OnInit {
               private us: UserProfileService) { }
 
   ngOnInit() {
-    if(this.us.watchUsername===""){
-      this.store.get('curUser').then(val=>{
-        this.username=val;
-        this.us.getUser(this.username).subscribe(res=>{
-          this.userProfile=res;
-        })
-        this.fs.getFollowers(this.username).subscribe(res=>{
-          this.followers=res;
-        })
-      })
-    }
-    else{
-      this.us.getUser(this.us.watchUsername).subscribe(res=>{
-        this.userProfile=res;
-      })
       this.fs.getFollowers(this.us.watchUsername).subscribe(res=>{
+        this.username=this.us.watchUsername;
         this.followers=res;
       })
     }
-  }
 
 }

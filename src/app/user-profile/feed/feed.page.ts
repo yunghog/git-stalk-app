@@ -18,26 +18,10 @@ export class FeedPage implements OnInit {
               private us: UserProfileService) { }
 
   ngOnInit() {
-
-      if(this.us.watchUsername===""){
-        this.store.get('curUser').then(val=>{
-          this.username=val;
-          this.us.getUser(this.username).subscribe(res=>{
-            this.userProfile=res;
-          })
-          this.fs.getFeed(this.username).subscribe(res=>{
-            this.feeds=res;
-          })
-        })
-      }
-      else{
-        this.us.getUser(this.us.watchUsername).subscribe(res=>{
-          this.userProfile=res;
-        })
-        this.fs.getFeed(this.us.watchUsername).subscribe(res=>{
+          this.fs.getFeed(this.us.watchUsername).subscribe(res=>{
+          this.username=this.us.watchUsername;
           this.feeds=res;
         })
-      }
   }
 
 }

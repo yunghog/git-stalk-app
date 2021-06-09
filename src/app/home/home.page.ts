@@ -24,8 +24,6 @@ export class HomePage implements OnInit{
               private store: Storage) {}
 
   ngOnInit(){
-    console.log(this.today_ref);
-
     this.store.get('curUser').then(val=>{
         let username = val;
         this.hs.getUser(username).subscribe(res=>{

@@ -60,6 +60,9 @@
               <p *ngSwitchCase="'PublicEvent'">
                 made a repository public
               </p>
+              <p *ngSwitchCase="'PushEvent'">
+                pushed an update to
+              </p>
               <p *ngSwitchDefault>
                 did a {{feed.type.replace('Event','')}} on
               </p>
@@ -81,7 +84,7 @@
             <h2>Developers you follow</h2>
           </ion-text>
           <ion-slides [options]="slideOpts" class="home-stories">
-            <ion-slide>
+            <ion-slide routerLink="/user-profile/{{user.login}}">
               <ion-avatar>
                 <img src="{{user.avatar_url}}">
               </ion-avatar>

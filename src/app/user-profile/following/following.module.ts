@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { FollowingPageRoutingModule } from './following-routing.module';
 
 import { FollowingPage } from './following.page';
-
+import { HeaderComponent } from '../header/header.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +15,6 @@ import { FollowingPage } from './following.page';
     IonicModule,
     FollowingPageRoutingModule
   ],
-  declarations: [FollowingPage]
+  declarations: [FollowingPage,HeaderComponent]
 })
 export class FollowingPageModule {}

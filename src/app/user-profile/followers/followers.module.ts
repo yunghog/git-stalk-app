@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { FollowersPageRoutingModule } from './followers-routing.module';
 
 import { FollowersPage } from './followers.page';
-
+import { HeaderComponent } from '../header/header.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +15,6 @@ import { FollowersPage } from './followers.page';
     IonicModule,
     FollowersPageRoutingModule
   ],
-  declarations: [FollowersPage]
+  declarations: [FollowersPage,HeaderComponent]
 })
 export class FollowersPageModule {}

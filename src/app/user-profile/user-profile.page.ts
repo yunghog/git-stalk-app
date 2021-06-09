@@ -22,7 +22,5 @@ export class UserProfilePage implements OnInit {
     }
     })
   }
-  clearStorage(){
-    this.store.clear();
-  }
+
 }
