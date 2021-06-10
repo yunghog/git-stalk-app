@@ -1,0 +1,132 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title>{{repository}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="4" offset-md="4">
+        <div class="activity-header heading bg-grad">
+          <ion-text color="light">
+            <h1>{{repositoryDetails.name}}</h1>
+            <h3>{{repositoryDetails.description}}</h3>
+          </ion-text>
+            <ion-chip color="light" routerLink="/user-profile/{{username}}">
+              <ion-avatar>
+                <img src="{{owner.avatar_url}}">
+              </ion-avatar>
+              <ion-label>
+                <ion-text color="light">
+                  {{username}}
+                </ion-text>
+              </ion-label>
+            </ion-chip>
+        </div>
+        <div class="waves">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#5e42b1" fill-opacity="1" d="M0,256L48,234.7C96,213,192,171,288,176C384,181,480,235,576,224C672,213,768,139,864,101.3C960,64,1056,64,1152,90.7C1248,117,1344,171,1392,197.3L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+          </svg>
+          <span class="wave-behind" >
+            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+              <path fill="#f21170" fill-opacity=".5" d="M0,64L48,64C96,64,192,64,288,90.7C384,117,480,171,576,208C672,245,768,267,864,250.7C960,235,1056,181,1152,181.3C1248,181,1344,235,1392,261.3L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+            </svg>
+          </span>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-md="4" offset-md="4">
+
+            <h2>Repository Details</h2>
+
+        <ion-item>
+          <ion-label>
+            <p>Repo Name</p>
+            {{repositoryDetails.name}}
+          </ion-label>
+        </ion-item>
+        <ion-item *ngIf="repositoryDetails.fork" routerLink="/repositories/{{source.full_name}}" detail>
+          <ion-label>
+            <p>Forked from</p>
+            {{source.full_name}}
+          </ion-label>
+        </ion-item>
+        <ion-item *ngIf="repositoryDetails.description">
+          <ion-label>
+            <p>Repo Description</p>
+            {{repositoryDetails.description}}
+          </ion-label>
+        </ion-item>
+        <ion-item detail routerLink="/user-profile/{{owner.login}}">
+          <ion-label>
+            <p>Owner</p>
+            {{owner.login}}
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <p>Created at</p>
+            {{repositoryDetails.created_at}}
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <div>
+            <ion-chip color="primary">
+              <ion-icon name="git-branch-outline"></ion-icon>
+              <ion-label>
+                {{repositoryDetails.forks}} Forks
+              </ion-label>
+            </ion-chip>
+            <ion-chip color="primary">
+              <ion-icon name="star"></ion-icon>
+              <ion-label>
+                {{repositoryDetails.stargazers_count}} Stars
+              </ion-label>
+            </ion-chip>
+            <ion-chip color="primary">
+              <ion-icon name="eye"></ion-icon>
+              <ion-label>
+                {{repositoryDetails.subscribers_count}} Watchers
+              </ion-label>
+            </ion-chip>
+            <ion-chip color="warning">
+              <ion-icon name="alert-circle-outline"></ion-icon>
+              <ion-label>
+                {{repositoryDetails.open_issues}} Open Issues
+              </ion-label>
+            </ion-chip>
+          </div>
+        </ion-item>
+        <ion-item *ngIf="repositoryDetails.homepage">
+          <ion-label>
+            Visit <a href="{{repositoryDetails.homepage}}">Homepage</a>
+          </ion-label>
+        </ion-item>
+        <ion-button expand="block" fill="clear" href="{{repositoryDetails.html_url}}" >Open with Github</ion-button>
+
+        <h3 *ngIf="commits.length>1">Commits</h3>
+        <ion-item *ngFor="let commit of commits">
+          <ion-label>
+            {{commit.author.login}}
+            <p>{{commit.commit.message}}</p>
+          </ion-label>
+        </ion-item>
+
+        <h3 *ngIf="contributors.length>1">Contributors</h3>
+        <div *ngIf="contributors.length>1">
+          <ion-chip color="primary" *ngFor="let c of contributors" routerLink="/user-profile/{{c.login}}">
+            <ion-avatar>
+              <img src="{{c.avatar_url}}"/>
+            </ion-avatar>
+            <ion-label>
+              {{c.login}}
+            </ion-label>
+          </ion-chip>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

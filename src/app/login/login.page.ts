@@ -41,7 +41,10 @@ export class LoginPage implements OnInit {
       else{
         this.userExist=true;
         this.store.set('curUser',user[0].username);
+        this.store.set('curUserID',user[0].id);
         this.router.navigateByUrl('/home');
+        this.inUsername = "";
+        this.inPassword = "";
       }
 
     })

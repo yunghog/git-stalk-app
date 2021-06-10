@@ -17,7 +17,10 @@ ion-button{
 ion-toolbar{
   font-family: 'poppins';
   --background: linear-gradient(90deg, var(--ion-color-primary) 0%, var(--ion-color-secondary) 110%);
-  color: var(--ion-text-color);
+  color: var(--ion-color-light);
+}
+ion-label{
+  font-family: 'poppins';
 }
 .heading{
   padding: 10px;

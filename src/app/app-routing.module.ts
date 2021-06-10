@@ -31,6 +31,14 @@ const routes: Routes = [
   {
     path: 'signup',
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
+  },
+  {
+    path: 'repositories/:username/:repository',
+    loadChildren: () => import('./repositories/repositories.module').then( m => m.RepositoriesPageModule)
+  },
+  {
+    path: 'saved-repo',
+    loadChildren: () => import('./saved-repo/saved-repo.module').then( m => m.SavedRepoPageModule)
   }
 ];
 

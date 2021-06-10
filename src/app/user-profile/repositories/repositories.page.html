@@ -11,7 +11,7 @@
       <div class="heading">
         <h1>Repositories</h1>
       </div>
-      <li class="repo-card" *ngFor="let repo of repos">
+      <li class="repo-card" *ngFor="let repo of repos" routerLink="/repositories/{{repo.full_name}}">
             <h2>{{repo.name}}</h2>
             <p>{{repo.description}}</p>
       </li>
