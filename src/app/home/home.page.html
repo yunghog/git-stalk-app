@@ -31,6 +31,18 @@
           </div>
         </ion-col>
       </ion-row>
+      <ion-row *ngIf="isUpdateAvailable==1">
+        <ion-col md="4" offset-md="4">
+          <div class="update-card">
+            <h2>New Update is available</h2>
+            <h5>Download the updated app to experience new features</h5>
+            <ion-button color="primary" expand="block" href="https://gitstalker.netlify.app/#downloads">
+              <ion-icon name="download" slot="start"></ion-icon>
+              Update now
+            </ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
       <ion-row>
         <ion-col size-md="4" offset-md="4">
           <ion-item *ngFor="let feed of feeds" detail routerLink="/repositories/{{feed.repo.name}}">

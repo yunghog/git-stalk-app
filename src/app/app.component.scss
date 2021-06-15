@@ -180,3 +180,51 @@ blockquote:after {
   font-weight: bolder;
   color: rgba(var(--ion-color-primary-rgb),.7)
 }
+
+// SplashPage
+.full-page-section{
+  height: 100vh;
+  width: 100%;
+}
+.content-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-splash{
+  animation: scale-in 1s;
+}
+@keyframes scale-in {
+  from{
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  to{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// update page
+.alert{
+  background-color: rgba(var(--ion-color-primary-rgb),.2);
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid rgba(var(--ion-color-primary-rgb),1);
+  color: rgba(var(--ion-color-primary-rgb),1);
+  margin: 10px 0px;
+}
+.update-card{
+  background-color:  rgba(var(--ion-color-primary-rgb),.2);
+  margin: 10px 0px;
+  border:  rgba(var(--ion-color-primary-rgb),1);
+  border-radius: 10px;
+  padding: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+.update-card h2{
+  background-color: rgba(var(--ion-color-primary-rgb),1);
+  margin: -10px;
+  padding: 20px 10px;
+}

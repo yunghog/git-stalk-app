@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'splash',
     pathMatch: 'full'
   },
   {
@@ -39,6 +39,14 @@ const routes: Routes = [
   {
     path: 'saved-repo',
     loadChildren: () => import('./saved-repo/saved-repo.module').then( m => m.SavedRepoPageModule)
+  },
+  {
+    path: 'splash',
+    loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
+  },
+  {
+    path: 'new-update',
+    loadChildren: () => import('./new-update/new-update.module').then( m => m.NewUpdatePageModule)
   }
 ];
 

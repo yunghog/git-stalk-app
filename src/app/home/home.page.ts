@@ -17,6 +17,7 @@ export class HomePage implements OnInit{
   slideOpts = {
       slidesPerView: this.checkScreen()
   }
+  isUpdateAvailable={}
   checkScreen(){
     return(window.innerWidth/80);
   }
@@ -24,6 +25,9 @@ export class HomePage implements OnInit{
               private store: Storage) {}
 
   ngOnInit(){
+    this.hs.checkUpdates().subscribe(res=>{
+      this.isUpdateAvailable=res;
+    })
     this.store.get('curUser').then(val=>{
         let username = val;
         this.hs.getUser(username).subscribe(res=>{

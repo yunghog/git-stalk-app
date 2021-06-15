@@ -20,4 +20,9 @@ export class HomeService {
     let url = "https://api.github.com/users/"+username+"/following".replace(' ','');
     return this.http.get<any[]>(url);
   }
+  checkUpdates(){
+    const thisVersion = "release2";
+    const url = "https://gitwatch-405ac-default-rtdb.asia-southeast1.firebasedatabase.app/updates/"+thisVersion+".json";
+    return this.http.get(url);
+  }
 }
