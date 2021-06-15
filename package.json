@@ -2,7 +2,7 @@
   "name": "Gitstalker",
   "version": "1.0.2",
   "author": "Samartha",
-  "homepage": "https://gitstalker.netlify.app/",
+  "homepage": "com.gitstalker.app",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
