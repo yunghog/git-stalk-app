@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.gitwatch.app',
-  appName: 'Gitwatch',
+  appId: 'com.gitstalk.app',
+  appName: 'Gitstalk',
   webDir: 'www',
   bundledWebRuntime: false
 };
