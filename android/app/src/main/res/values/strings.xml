@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Gitwatch</string>
-    <string name="title_activity_main">Gitwatch</string>
-    <string name="package_name">com.gitwatch.app</string>
-    <string name="custom_url_scheme">com.gitwatch.app</string>
+    <string name="app_name">Gitstalk</string>
+    <string name="title_activity_main">Gitstalk</string>
+    <string name="package_name">com.gitstalk.app</string>
+    <string name="custom_url_scheme">com.gitstalk.app</string>
 </resources>

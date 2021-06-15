@@ -1,4 +1,4 @@
-package com.gitwatch.app;
+package com.gitstalk.app;
 
 import com.getcapacitor.BridgeActivity;
 
