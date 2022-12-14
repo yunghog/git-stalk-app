@@ -1,18 +1,4 @@
 <ion-app>
-  <ion-menu side="start" menuId="first" contentId="main">
-  <ion-header>
-    <ion-toolbar color="primary">
-      <ion-title>Git Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-list>
-      <ion-item routerLink="/home">Home</ion-item>
-      <ion-item routerLink="/watch">Explore</ion-item>
-      <ion-item routerLink="/new-update">Update</ion-item>
-      <ion-item (click)="clear()">Logout</ion-item>
-    </ion-list>
-  </ion-content>
-</ion-menu>
+<app-sidebar></app-sidebar>
 <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

@@ -1,6 +1,6 @@
 {
-  "name": "Gitstalker",
-  "version": "1.0.2",
+  "name": "gitstalker",
+  "version": "2.0.1",
   "author": "Samartha",
   "homepage": "com.gitstalker.app",
   "scripts": {
