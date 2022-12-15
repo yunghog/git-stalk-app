@@ -19,6 +19,7 @@ export class SidebarComponent implements OnInit {
   clear() {
     this.storage.set('curUser', null);
     this.router.navigateByUrl('/login');
+    this.closeMenu();
   }
   closeMenu() {
     this.menu.close('first');

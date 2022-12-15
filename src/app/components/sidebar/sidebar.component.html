@@ -6,9 +6,9 @@
   </ion-header>
   <ion-content>
     <ion-list class="ion-no-padding">
-      <ion-item routerLink="/home" (click)="closeMenu()" [routerLinkActive]="'active-item'">Home</ion-item>
-      <ion-item routerLink="/watch" (click)="closeMenu()" [routerLinkActive]="'active-item'">Explore</ion-item>
-      <ion-item routerLink="/new-update" (click)="closeMenu()" [routerLinkActive]="'active-item'">Update</ion-item>
+      <ion-item routerLink="/home" (click)="closeMenu()" routerLinkActive="active-item">Home</ion-item>
+      <ion-item routerLink="/watch" (click)="closeMenu()" routerLinkActive="active-item">Explore</ion-item>
+      <ion-item routerLink="/new-update" (click)="closeMenu()" routerLinkActive="active-item">Update</ion-item>
       <ion-item (click)="clear()">Logout</ion-item>
     </ion-list>
   </ion-content>

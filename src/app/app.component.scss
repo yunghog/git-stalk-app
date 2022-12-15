@@ -6,35 +6,35 @@
   font-family: 'poppins';
   src: url('../assets/fonts/poppins.ttf');
 }
-ion-content{
+ion-content {
   font-family: 'poppins';
 }
-ion-button{
+ion-button {
   text-transform: uppercase;
   font-family: 'longhaul';
   letter-spacing: 2px;
 }
-ion-toolbar{
+ion-toolbar {
   font-family: 'poppins';
   --background: linear-gradient(90deg, var(--ion-color-primary) 0%, var(--ion-color-secondary) 110%);
   color: var(--ion-color-light);
 }
-ion-label{
+ion-label {
   font-family: 'poppins';
 }
-.heading{
+.heading {
   padding: 10px;
 }
-.heading h1{
+.heading h1 {
   font-family: 'longhaul';
   margin-bottom: 0px;
   text-transform: uppercase;
 }
-.heading p{
+.heading p {
   margin-top: 0px;
   color: var(--ion-color-secondary);
 }
-.img-con{
+.img-con {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,27 +42,27 @@ ion-label{
   background: linear-gradient(45deg, var(--ion-color-primary) 0%, var(--ion-color-secondary) 110%);
   margin: -10px;
 }
-.img-con img{
+.img-con img {
   width: 70%;
 }
-.waves{
+.waves {
   margin: -10px;
   position: relative;
 }
-.wave-behind{
+.wave-behind {
   position: absolute;
   top: 0px;
   width: 100%;
   z-index: 2;
   left: 0px;
 }
-.form-ctrl ion-input{
+.form-ctrl ion-input {
   padding-left: 30px !important;
   border-radius: 10px;
   border: 2px solid var(--ion-color-primary);
   margin: 10px 0px 10px 0px;
 }
-.form-ctrl .label{
+.form-ctrl .label {
   position: absolute;
   font-size: 14px;
   background-color: var(--ion-color-primary);
@@ -72,60 +72,60 @@ ion-label{
   left: 20px;
   z-index: 10;
 }
-.form-ctrl .icon{
+.form-ctrl .icon {
   position: absolute;
   left: 10px;
 }
-.anim-shift-up{
+.anim-shift-up {
   margin: inherit;
   animation: shift-up 2s ease;
 }
-@keyframes shift-up{
-  from{
+@keyframes shift-up {
+  from {
     margin-top: 30px;
   }
-  to{
+  to {
     margin-top: 0px;
   }
 }
-.bg-grad{
+.bg-grad {
   background: linear-gradient(45deg, var(--ion-color-primary) 0%, var(--ion-color-secondary) 110%);
   margin: -10px;
 }
 // profile page Design
-.profile-con{
+.profile-con {
   padding: 10px;
   color: var(--ion-color-light);
 }
-.profile-con .dp{
+.profile-con .dp {
   border-radius: 50%;
   overflow: hidden;
   padding: 10px;
 }
-.profile-con .profile-sum{
+.profile-con .profile-sum {
   display: flex;
 }
-.profile-con .profile-sum span{
+.profile-con .profile-sum span {
   margin-right: 20px;
   text-align: center;
 }
-.profile-con .profile-sum span h2{
+.profile-con .profile-sum span h2 {
   font-family: 'longhaul';
   margin: 0px;
   font-size: 28px;
 }
-.profile-con .profile-sum span p{
+.profile-con .profile-sum span p {
   margin: 0px;
 }
-.profile-con .profile h1{
+.profile-con .profile h1 {
   margin-top: 0px;
 }
-.profile-con .profile p{
+.profile-con .profile p {
   margin: 0px;
 }
 blockquote {
-    font-size: 1.5em;
-    line-height: 1.5em;
+  font-size: 1.5em;
+  line-height: 1.5em;
 }
 blockquote:before {
   content: open-quote;
@@ -139,92 +139,68 @@ blockquote:after {
   vertical-align: bottom;
   color: var(--ion-color-secondary);
   font-size: 4em;
-  top: .2em;
+  top: 0.2em;
   position: relative;
 }
-.repo-card{
+.repo-card {
   list-style-type: none;
   padding: 10px;
-  background-color: rgba(var(--ion-color-light-rgb),.3);
-  border: 1px solid rgba(var(--ion-color-medium-rgb),.3);
+  background-color: rgba(var(--ion-color-light-rgb), 0.3);
+  border: 1px solid rgba(var(--ion-color-medium-rgb), 0.3);
   border-radius: 10px;
   margin: 10px;
 }
-.repo-card h2{
+.repo-card h2 {
   margin: 0px;
 }
-.feed-item p{
+.feed-item p {
   display: inline;
 }
-.feed-item .actor,p.feed-desc{
+.feed-item .actor,
+p.feed-desc {
   font-weight: bolder;
 }
-.feed-item p.feed-desc{
+.feed-item p.feed-desc {
   display: block;
-  color: rgba(var(--ion-color-primary-rgb),.5);
+  color: rgba(var(--ion-color-primary-rgb), 0.5);
 }
 
 // HomePage
-.home-stories{
+.home-stories {
   margin-top: 10px;
   padding: 10px 0px;
-  border: 1px solid rgba(var(--ion-color-medium-rgb),.2);
+  border: 1px solid rgba(var(--ion-color-medium-rgb), 0.2);
   border-radius: 10px;
-  box-shadow: 10px 10px 20px rgba(var(--ion-color-primary-rgb),.2);
+  box-shadow: 10px 10px 20px rgba(var(--ion-color-primary-rgb), 0.2);
 }
-.activity-header{
+.activity-header {
   padding-bottom: 30px;
 }
-.actor2{
+.actor2 {
   font-family: 'poppins';
   font-weight: bolder;
-  color: rgba(var(--ion-color-primary-rgb),.7)
+  color: rgba(var(--ion-color-primary-rgb), 0.7);
 }
-
-// SplashPage
-.full-page-section{
-  height: 100vh;
-  width: 100%;
-}
-.content-center{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.logo-splash{
-  animation: scale-in 1s;
-}
-@keyframes scale-in {
-  from{
-    opacity: 0;
-    transform: scale(1.2);
-  }
-  to{
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 // update page
-.alert{
-  background-color: rgba(var(--ion-color-primary-rgb),.2);
+.alert {
+  background-color: rgba(var(--ion-color-primary-rgb), 0.2);
   padding: 10px;
   border-radius: 10px;
-  border: 2px solid rgba(var(--ion-color-primary-rgb),1);
-  color: rgba(var(--ion-color-primary-rgb),1);
+  border: 2px solid rgba(var(--ion-color-primary-rgb), 1);
+  color: rgba(var(--ion-color-primary-rgb), 1);
   margin: 10px 0px;
 }
-.update-card{
-  background-color:  rgba(var(--ion-color-primary-rgb),.2);
+.update-card {
+  background-color: rgba(var(--ion-color-primary-rgb), 0.2);
   margin: 10px 0px;
-  border:  rgba(var(--ion-color-primary-rgb),1);
+  border: rgba(var(--ion-color-primary-rgb), 1);
   border-radius: 10px;
   padding: 10px;
   overflow: hidden;
   text-align: center;
 }
-.update-card h2{
-  background-color: rgba(var(--ion-color-primary-rgb),1);
+.update-card h2 {
+  background-color: rgba(var(--ion-color-primary-rgb), 1);
   margin: -10px;
   padding: 20px 10px;
 }
