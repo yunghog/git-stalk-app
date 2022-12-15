@@ -1,0 +1,15 @@
+.front {
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 2;
+}
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.wave-1 {
+  position: relative;
+}

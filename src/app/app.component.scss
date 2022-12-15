@@ -1,17 +1,9 @@
-@font-face {
-  font-family: 'longhaul';
-  src: url('../assets/fonts/longhaul.ttf');
-}
-@font-face {
-  font-family: 'poppins';
-  src: url('../assets/fonts/poppins.ttf');
-}
 ion-content {
   font-family: 'poppins';
 }
 ion-button {
   text-transform: uppercase;
-  font-family: 'longhaul';
+  font-family: 'righteous';
   letter-spacing: 2px;
 }
 ion-toolbar {
@@ -26,7 +18,7 @@ ion-label {
   padding: 10px;
 }
 .heading h1 {
-  font-family: 'longhaul';
+  font-family: 'righteous';
   margin-bottom: 0px;
   text-transform: uppercase;
 }
@@ -110,7 +102,7 @@ ion-label {
   text-align: center;
 }
 .profile-con .profile-sum span h2 {
-  font-family: 'longhaul';
+  font-family: 'righteous';
   margin: 0px;
   font-size: 28px;
 }

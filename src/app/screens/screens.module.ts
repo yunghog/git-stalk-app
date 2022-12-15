@@ -3,12 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { ScreensRoutingModule } from './screens-routing.module';
 
-
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    ScreensRoutingModule
-  ]
+  imports: [CommonModule, ScreensRoutingModule],
+  exports: [],
 })
-export class ScreensModule { }
+export class ScreensModule {}
