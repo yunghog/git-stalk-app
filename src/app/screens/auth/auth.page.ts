@@ -17,7 +17,4 @@ export class AuthPage implements OnInit {
   onLogin(data: NgForm) {
     console.log(data.value);
   }
-  log(event: string = 'asd') {
-    console.log(event);
-  }
 }
