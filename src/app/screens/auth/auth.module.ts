@@ -7,10 +7,10 @@ import { IonicModule } from '@ionic/angular';
 import { AuthPageRoutingModule } from './auth-routing.module';
 
 import { AuthPage } from './auth.page';
-import { WavesComponent } from 'src/app/components/waves/waves.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, AuthPageRoutingModule],
-  declarations: [AuthPage, WavesComponent],
+  imports: [CommonModule, FormsModule, IonicModule, AuthPageRoutingModule, ComponentsModule],
+  declarations: [AuthPage],
 })
 export class AuthPageModule {}

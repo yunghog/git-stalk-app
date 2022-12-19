@@ -1,0 +1,17 @@
+<div class="input-box">
+  <label for="{{ id }}">
+    {{ label }}
+  </label>
+  <input
+    [(ngModel)]="input"
+    (blur)="onBlur()"
+    (focus)="onFocus()"
+    (ngModelChange)="onChange($event)"
+    value="{{ value }}"
+    id="{{ id }}"
+    class="{{ class }}"
+    [minLength]="minLength"
+    [maxLength]="maxLength"
+    [name]="name"
+  />
+</div>

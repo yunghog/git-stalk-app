@@ -1,0 +1,34 @@
+@import './variables.scss';
+
+$primary: var(--ion-color-primary);
+$secondary: var(--ion-color-secondary);
+$tertiary: var(--ion-color-tertiary);
+$danger: var(--ion-color-danger);
+$success: var(--ion-color-success);
+$info: var(--ion-color-info);
+$dark: var(--ion-color-dark);
+$light: var(--ion-color-light);
+$medium: var(--ion-color-medium);
+
+$colors: (
+  primary: $primary,
+  secondary: $secondary,
+  tertiary: $tertiary,
+  danger: $danger,
+  success: $success,
+  info: $info,
+  dark: $dark,
+  light: $light,
+  medium: $medium,
+);
+
+@mixin gen-props($prefix, $property) {
+  @each $color-name, $color in $colors {
+    .#{$prefix}-#{$color-name} {
+      #{$property}: $color;
+    }
+  }
+}
+
+@include gen-props('text', 'color');
+@include gen-props('bg', 'background');

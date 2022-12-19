@@ -1,5 +1,49 @@
 <ion-content [fullscreen]="true">
   <div class="header">
-    <img src="../../../assets/images/login.png" />
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="10">
+          <h1 class="heading">Login</h1>
+          <p class="sub-heading">Sign in into your account</p>
+        </ion-col>
+        <ion-col size="2">
+          <img src="../../../assets/icon/logo-white.png" class="logo" />
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path
+      fill="#5e42b1"
+      fill-opacity="1"
+      d="M0,0L48,5.3C96,11,192,21,288,42.7C384,64,480,96,576,90.7C672,85,768,43,864,64C960,85,1056,171,1152,202.7C1248,235,1344,213,1392,202.7L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+    ></path>
+  </svg>
+  <form class="login-form" #loginForm="ngForm" (submit)="onLogin(loginForm)">
+    <ion-item fill="solid">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input
+        placeholder="Enter Email"
+        type="email"
+        [(ngModel)]="loginData.email"
+        #email="ngModel"
+        name="email"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input
+        placeholder="Enter Password"
+        type="password"
+        [(ngModel)]="loginData.password"
+        #password="ngModel"
+        ngModel
+        name="password"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-button class="ion-margin-vertical" type="primary" size="block"> Login </ion-button>
+    <p class="ion-text-center">Dont have an account? <span class="text-secondary">Sign up</span></p>
+  </form>
 </ion-content>

@@ -1,0 +1,33 @@
+.header {
+  padding: 0 10px;
+  background: linear-gradient(to top, var(--ion-color-primary), var(--ion-color-secondary));
+}
+.heading {
+  font-family: 'righteous';
+  font-size: 32px;
+  color: var(--ion-color-light);
+  margin-top: 0;
+}
+.sub-heading {
+  font-family: 'poppins-semibold';
+  font-size: 18px;
+  color: rgba(var(--ion-color-light-rgb), 0.8);
+  border-left: 5px solid var(--ion-color-light);
+  padding-left: 5px;
+  margin-top: 0;
+}
+.logo {
+  width: 100%;
+}
+ion-label.custom {
+  font-family: 'poppins';
+}
+ion-input {
+  font-family: 'poppins';
+}
+.login-form {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(var(--ion-color-dark-rgb), 0.1);
+}
