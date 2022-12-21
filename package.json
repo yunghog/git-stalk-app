@@ -15,6 +15,7 @@
   "dependencies": {
     "@angular/common": "~14.2.12",
     "@angular/core": "^15.0.3",
+    "@angular/fire": "^7.5.0",
     "@angular/forms": "~14.2.12",
     "@angular/platform-browser": "~14.2.12",
     "@angular/platform-browser-dynamic": "~14.2.12",
@@ -23,6 +24,7 @@
     "@capacitor/core": "3.0.0",
     "@ionic/angular": "^6.4.0",
     "@ionic/storage": "^3.0.4",
+    "firebase": "^9.15.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"

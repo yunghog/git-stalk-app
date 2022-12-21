@@ -13,6 +13,18 @@ const routes: Routes = [
     path: 'login',
     component: AuthPage,
   },
+  {
+    path: 'signup',
+    loadChildren: () => import('./signup/signup.module').then((m) => m.SignupPageModule),
+  },
+  {
+    path: 'success/:method',
+    loadChildren: () => import('./success/success.module').then((m) => m.SuccessPageModule),
+  },
+  {
+    path: 'create-password',
+    loadChildren: () => import('./create-password/create-password.module').then((m) => m.CreatePasswordPageModule),
+  },
 ];
 
 @NgModule({

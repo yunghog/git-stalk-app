@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -11,10 +12,17 @@ export class AuthPage implements OnInit {
     email: '',
     password: '',
   };
-  constructor() {}
+  constructor(private as: AuthService) {}
 
   ngOnInit() {}
   onLogin(data: NgForm) {
-    console.log(data.value);
+    this.as.SignIn(data.value.email, data.value.password).then((res) => {
+      console.log(res);
+    });
+  }
+  signinWithGithub() {
+    this.as.SigninGithub().then((res) => {
+      console.log(res);
+    });
   }
 }

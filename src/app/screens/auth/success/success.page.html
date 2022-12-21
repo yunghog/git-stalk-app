@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/auth/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Account Created</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p class="ion-text-center text-primary">
+    Account has been created !
+    <br />
+    <span *ngIf="method==signupMethod.EMAIL">
+      Please check you mail for verification email and click on the link to verify your email
+    </span>
+  </p>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-button size="full" fill="clear" color="light" routerLink="/auth/login"> Go to Login </ion-button>
+  </ion-toolbar>
+</ion-footer>

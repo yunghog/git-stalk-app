@@ -29,7 +29,7 @@
           [(ngModel)]="loginData.email"
           #email="ngModel"
           name="email"
-          pattern="[/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/]"
+          [pattern]="'^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'"
           required
         ></ion-input>
         <ion-note slot="end" *ngIf="!email.valid && email.touched" color="danger">Invalid email</ion-note>
@@ -48,21 +48,13 @@
       </ion-item>
       <ion-button class="ion-margin-vertical" type="primary" size="block"> Login </ion-button>
     </form>
-    <p class="ion-text-center">Dont have an account? <span class="text-secondary">Sign up</span></p>
+    <p class="ion-text-center">
+      Dont have an account? <span class="text-secondary" routerLink="/auth/signup">Sign up</span>
+    </p>
     <p class="ion-text-center">or</p>
-    <ion-row>
-      <ion-col>
-        <ion-button color="dark" size="block">
-          <ion-icon slot="end" name="logo-github"></ion-icon>
-          github
-        </ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button color="danger" size="block">
-          <ion-icon slot="end" name="logo-google"></ion-icon>
-          google
-        </ion-button>
-      </ion-col>
-    </ion-row>
+    <ion-button color="dark" size="block" (click)="signinWithGithub()">
+      <ion-icon slot="end" name="logo-github"></ion-icon>
+      github
+    </ion-button>
   </div>
 </ion-content>

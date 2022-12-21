@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/auth/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Create Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="step==steps[0]">
+    <p class="text">Sign up with email</p>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input
+        placeholder="Enter Email"
+        type="email"
+        [(ngModel)]="signupData.email"
+        #email="ngModel"
+        name="email"
+        [pattern]="'^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'"
+        required
+      ></ion-input>
+      <ion-note slot="end" *ngIf="!email.valid && email.touched" color="danger">Invalid email</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Github Username</ion-label>
+      <ion-input
+        placeholder="Enter Github Username"
+        type="text"
+        [(ngModel)]="signupData.username"
+        #username="ngModel"
+        name="username"
+        required
+      ></ion-input>
+      <ion-note slot="end" *ngIf="!username.valid && username.touched" color="danger">Invalid Username</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input
+        placeholder="Enter Full Name"
+        type="text"
+        [(ngModel)]="signupData.name"
+        #name="ngModel"
+        name="name"
+        required
+      ></ion-input>
+      <ion-note slot="end" *ngIf="!name.valid && name.touched" color="danger">Invalid Name</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Create Password</ion-label>
+      <ion-input
+        placeholder="Enter new Password"
+        type="password"
+        [(ngModel)]="signupData.password"
+        #passwordCtrl="ngModel"
+        name="password"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Confirm Password</ion-label>
+      <ion-input
+        placeholder="Re-enter Password"
+        type="password"
+        [(ngModel)]="rePassword"
+        #rePasswordCtrl="ngModel"
+        name="rePassword"
+        required
+      ></ion-input>
+      <ion-note
+        slot="end"
+        *ngIf="passwordCtrl.touched && rePasswordCtrl.touched && signupData.password!==rePassword"
+        color="danger"
+        >Passwords not matching</ion-note
+      >
+    </ion-item>
+    <p class="ion-text-center">Or</p>
+    <ion-button color="dark" size="block" (click)="signupWithGithub()">
+      <ion-icon slot="start" name="logo-github"></ion-icon>
+      Signup with Github
+    </ion-button>
+  </div>
+  <div *ngIf="step==steps[1]">
+    <p>OTP Verification</p>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-button *ngIf="step==steps[0]" size="full" fill="clear" color="light" (click)="sendVerificationMail()">
+      Continue
+    </ion-button>
+    <ion-button *ngIf="step==steps[2]" size="full" fill="clear" color="light" (click)="nextStep()"> Verify </ion-button>
+  </ion-toolbar>
+</ion-footer>
