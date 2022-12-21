@@ -8,6 +8,8 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AuthService } from './services/auth.service';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
+import { ComponentsModule } from './components/components.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -16,6 +18,7 @@ import { AuthService } from './services/auth.service';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    ComponentsModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, AuthService],
   bootstrap: [AppComponent],

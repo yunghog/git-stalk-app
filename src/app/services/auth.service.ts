@@ -30,8 +30,8 @@ export class AuthService {
   SignUp(data: SignupData) {
     return this.afAuth.createUserWithEmailAndPassword(data.email, data.password);
   }
-  SignIn(email: string, password: string): Promise<firebase.default.auth.UserCredential> {
-    return this.afAuth.signInWithEmailAndPassword(email, password);
+  async SignIn(email: string, password: string) {
+    return await this.afAuth.signInWithEmailAndPassword(email, password);
   }
   SignupGithub() {
     return this.afAuth.signInWithPopup(this.provider);
@@ -47,5 +47,14 @@ export class AuthService {
       id: id,
     };
     this.db.list('/users').set(id, user);
+  }
+  userLogin(user: any) {
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+  userLogout() {
+    localStorage.removeItem('user');
+  }
+  isLoggedin() {
+    return localStorage.getItem('user') == '' ? false : true;
   }
 }

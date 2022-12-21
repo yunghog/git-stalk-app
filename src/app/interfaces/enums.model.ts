@@ -8,3 +8,8 @@ export enum SignupMethod {
   EMAIL = 'email',
   GITHUB = 'github',
 }
+export enum SnackbarType {
+  ERROR = 'error',
+  SUCCESS = 'success',
+  INFO = 'info',
+}
