@@ -24,6 +24,8 @@ export class AuthService {
   constructor(public afAuth: AngularFireAuth, public router: Router, private db: AngularFireDatabase) {}
   SendVerificationMail() {
     return this.afAuth.currentUser.then((user) => {
+      console.log('asdasd', user);
+
       return user.sendEmailVerification();
     });
   }
@@ -56,5 +58,19 @@ export class AuthService {
   }
   isLoggedin() {
     return localStorage.getItem('user') == '' ? false : true;
+  }
+  errorMessage(code: string) {
+    switch (code) {
+      case 'auth/user-disabled':
+        return 'Sorry your user is disabled.';
+      case 'auth/user-not-found':
+        return 'Sorry user not found.';
+      case 'auth/invalid-email':
+        return 'Email entered is invalid.';
+      case 'auth/invalid-password':
+        return 'Password entered is wrong.';
+      default:
+        return 'Login error try again later.';
+    }
   }
 }

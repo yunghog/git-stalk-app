@@ -41,6 +41,7 @@ export class SignupPage implements OnInit {
       this.as
         .SignUp(this.signupData)
         .then((res) => {
+          this.as.SendVerificationMail();
           this.as.addUser(this.signupData, res.user.uid);
           this.router.navigateByUrl('/auth/success/' + SignupMethod.EMAIL);
         })

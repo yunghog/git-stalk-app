@@ -23,10 +23,38 @@ export class AuthPage implements OnInit {
   };
   constructor(private as: AuthService, private router: Router, private sb: SnackbarService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.as.isLoggedin()) this.router.navigateByUrl('home');
+  }
   async onLogin(data: NgForm) {
-    await this.as
-      .SignIn(data.value.email, data.value.password)
+    if (data.valid) {
+      await this.as
+        .SignIn(data.value.email, data.value.password)
+        .then((res) => {
+          this.user = {
+            name: res.user.displayName,
+            email: res.user.email,
+            id: res.user.uid,
+            username: res.additionalUserInfo.username,
+          };
+          if (res.user.emailVerified) {
+            this.as.userLogin(this.user);
+            this.router.navigateByUrl('/home');
+          } else {
+            this.as.SendVerificationMail();
+            this.sb.open('User has not verified. Please check your mail', SnackbarType.INFO);
+          }
+        })
+        .catch((error) => {
+          this.sb.open(this.as.errorMessage(error['code']), SnackbarType.ERROR);
+        });
+    } else {
+      this.sb.open('Please enter valid email id and password', SnackbarType.INFO);
+    }
+  }
+  signinWithGithub() {
+    this.as
+      .SigninGithub()
       .then((res) => {
         this.user = {
           name: res.user.displayName,
@@ -38,16 +66,12 @@ export class AuthPage implements OnInit {
           this.as.userLogin(this.user);
           this.router.navigateByUrl('/home');
         } else {
-          this.sb.open('Error', SnackbarType.ERROR);
+          this.as.SendVerificationMail();
+          this.sb.open('User has not verified. Please check your mail', SnackbarType.INFO);
         }
       })
       .catch((error) => {
-        this.sb.open('Error', SnackbarType.ERROR);
+        this.sb.open(this.as.errorMessage(error['code']), SnackbarType.ERROR);
       });
-  }
-  signinWithGithub() {
-    this.as.SigninGithub().then((res) => {
-      console.log(res);
-    });
   }
 }
